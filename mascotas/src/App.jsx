@@ -6,7 +6,11 @@ function App() {
   const [response, setResponse] = useState(null);
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/data')
+    fetch('/api/data', {
+      headers: {
+          'accepts':"application/json"
+        },
+    })
       .then(response => response.json())
       .then(data => setResponse(data));
   }
