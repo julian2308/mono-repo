@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: bff-y-frontend-pod
+  labels:
+    app: bff-y-frontend-pod
+spec:
+  containers:
+  - name: bff-container
+    image: julianalga/back:1.1
+    ports:
+    - containerPort: 3000  # Puerto que expone el BFF (ajusta al puerto real)
+  - name: frontend-container
+    image: julianalga/front:1.4
+    ports:
+    - containerPort: 5173  # Puerto que expone el frontend (ajusta al puerto real)

@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: bff-frontend-service
+spec:
+  selector:
+    app: bff-y-frontend-pod  # Esto debe coincidir con las etiquetas de tu pod o el nombre del pod
+  ports:
+    - name: bff-port
+      port: 3000        # El puerto interno en el que Kubernetes expone el servicio
+      targetPort: 3000     # El puerto del contenedor bff-container
+      nodePort: 30080      # El puerto que expone tu máquina local (puedes cambiar el puerto si lo necesitas)
+    - name: frontend-port
+      port: 5173          # El puerto interno en el que Kubernetes expone el servicio
+      targetPort: 5173     # El puerto del contenedor frontend-container
+      nodePort: 30081      # El puerto que expone tu máquina local (puedes cambiar el puerto si lo necesitas)
+  type: NodePort
