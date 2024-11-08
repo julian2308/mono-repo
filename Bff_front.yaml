@@ -11,6 +11,6 @@ spec:
     ports:
     - containerPort: 3000  # Puerto que expone el BFF (ajusta al puerto real)
   - name: frontend-container
-    image: julianalga/front:1.4
+    image: julianalga/front:1.8
     ports:
     - containerPort: 5173  # Puerto que expone el frontend (ajusta al puerto real)
